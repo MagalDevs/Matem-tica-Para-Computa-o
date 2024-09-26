@@ -1,20 +1,3 @@
-// // Matriz 3x3
-// const matriz3x3 = [
-//     [2, -3, 1],//[0][0] - [0][1]
-//     [3, -1, 3],//[1][0] - [1][1]
-//     [1, 2, -2]//[2][0] -  [2][1]
-// ];
-
-// // Cálculo do determinante usando a regra de Sarrus
-// const determinante3x3 = (((matriz3x3[0][0])*(matriz3x3[1][1])*(matriz3x3[2][2])) + 
-//                         ((matriz3x3[0][1]) * (matriz3x3[1][2]) * (matriz3x3[2][0])) + 
-//                         ((matriz3x3[0][2]) * (matriz3x3[1][0]) * (matriz3x3[2][1]))) - 
-//                         (((matriz3x3[2][0]) *(matriz3x3[1][1]) * (matriz3x3[0][2])) + 
-//                         ((matriz3x3[2][1]) * (matriz3x3[1][2]) * (matriz3x3[0][0])) +
-//                         ((matriz3x3[2][2]) * (matriz3x3[1][0]) * (matriz3x3[0][1])));
-
-// console.log("Determinante da matriz 3x3: " + determinante3x3);
-
 // Coeficientes do sistema de 3x3
 var a1 = 2, b1 = -3, c1 = 1, d1 = 9;
 var a2 = 3, b2 = -1, c2 = 3, d2 = 8;
@@ -23,7 +6,7 @@ var a3 = 1, b3 = 2, c3 = -2, d3 = 5;
 // Passo 1: Calcular o determinante da matriz principal (D)
 var D = a1 * (b2 * c3 - b3 * c2) - b1 * (a2 * c3 - a3 * c2) + c1 * (a2 * b3 - a3 * b2);
 
-console.log(D);
+console.log("Determinante da matriz 3x3: " + D);
 
 // Verificação se o determinante da matriz principal é diferente de zero
 if (D === 0) {
@@ -33,9 +16,9 @@ if (D === 0) {
     var Dz = a1 * (b2 * d3 - b3 * d2) - b1 * (a2 * d3 - a3 * d2) + d1 * (a2 * b3 - a3 * b2);
 
     if (Dx === 0 && Dy === 0 && Dz === 0) {
-        console.log("Sistema indeterminado: infinitas soluções.");
+        console.log("\nSistema indeterminado: infinitas soluções.");
     } else {
-        console.log("Sistema inconsistente: sem solução.");
+        console.log("\nSistema inconsistente: sem solução.");
     }
 } else {
     // Passo 2: Calcular os determinantes de x (Dx), y (Dy) e z (Dz)
@@ -49,7 +32,7 @@ if (D === 0) {
     var z = `${Dz} / ${D} ou ${(Dz/D).toFixed(2)}`;
 
     // Exibir os resultados
-    console.log("Solução do sistema:");
+    console.log("\nSolução do sistema:");
     console.log("x = " + x);
     console.log("y = " + y);
     console.log("z = " + z);
